@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.content {
+    font-family: system-ui, serif;
+    font-size: 5rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    background: #f8f8ff;
+}
+
+a {
+    text-decoration-line: none;
+    /*   text-decoration-line: underline; */
+    /*   text-decoration-line: overline; */
+    /*   text-decoration-line: line-through; */
+    /*   text-decoration-line: underline line-through overline; */
+}
+
+.content > a {
+    color: #ffffff;
+}
