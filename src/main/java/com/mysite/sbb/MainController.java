@@ -14,7 +14,10 @@ public class MainController {
 	}
 
 	@RequestMapping("/")
+//	public String root() { // 기존 게시판 메인 화면
+//		return "redirect:/question/list";
+//	}
 	public String root() {
-		return "redirect:/question/list";
+		return "redirect:/user/home";
 	}
 }

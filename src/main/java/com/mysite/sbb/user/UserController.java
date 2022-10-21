@@ -65,4 +65,9 @@ public class UserController {
     public String category() {
         return "category";
     }
+
+    @GetMapping("/home") //홈 화면 페이지 추가
+    public String home() {
+        return "home";
+    }
 }
