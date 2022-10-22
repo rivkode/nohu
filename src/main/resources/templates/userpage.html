@@ -1,41 +1,45 @@
 <html layout:decorate="~{layout}">
 
 <div layout:fragment="content" class="container my-3">
+    <h2>현재 개발중입니다.</h2>
+    <h4>내 정보를 표시할 예정입니다.</h4>
     <form th:action="@{/user/userpage}" method="get">
         <table class="table">
-            <h2>현재 개발중입니다.</h2>
-            <h4>내 정보를 표시할 예정입니다.</h4>
-
-            <tr class="text-center">
+            <thead>
+            <tr class="text-start">
                 <th>이름</th>
-                <th>이메일</th>
-                <!--사용자가 작성한 글-->
-                <!--사용자 답변-->
-
             </tr>
+            <tr class="text-start">
+                <th>이메일</th>
+            </tr>
+            </thead>
+
+            <tbody>
             <tr class="text-center">
 <!--                아래에서 유저이름, 이메일을 표현하고 싶음-->
                 <td><span th:text="${username}"></span></td>
                 <td><span th:text="${email}"></span></td>
             </tr>
+            </tbody>
         </table>
     </form>
 
-    <form th:action="@{/user/userpage}" method="get">
+    <table class="table">
+        <thead class="table-dark">
+        <tr class="text-center">
+            <th>이름</th>
+        </tr>
+        <tr class="text-center">
+            <th>이메일</th>
+        </tr>
+        <tr class="text-center">
+            <th>자기소개</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 
-        <div class="alert alert-danger">
-            잘못 접근하셨습니다.
-        </div>
-
-        <div class="mb-3">
-            <label for="username" class="form-label">사용자ID</label>
-<!--            <input type="text" name="username" id="username" class="form-control">-->
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">비밀번호</label>
-<!--            <input type="password" name="password" id="password" class="form-control">-->
-        </div>
-    </form>
 
 </div>
 
