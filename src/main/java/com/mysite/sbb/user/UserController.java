@@ -2,9 +2,12 @@ package com.mysite.sbb.user;
 
 import javax.validation.Valid;
 
+import com.mysite.sbb.question.Question;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -56,9 +59,18 @@ public class UserController {
         return "login_form";
     }
 
-    @GetMapping("/userpage")
-    public String mypage() {
-        return "userpage";
+//    @GetMapping("/userpage")
+//    public String mypage() {
+//        return "userpage";
+//    }
+
+    @RequestMapping("/mypage/{id}")
+    public String mypage(Model model, @PathVariable("id") Integer id) {
+//        Question question = this.questionService.getQuestion(id);
+
+        SiteUser siteUser = this.userService.getUser(id);
+        model.addAttribute("siteUser", siteUser);
+        return "mypage";
     }
 
     @GetMapping("/category")
