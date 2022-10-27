@@ -1,25 +1,26 @@
 <html layout:decorate="~{layout}">
-
 <div layout:fragment="content" class="container my-3">
     <h2>현재 개발중입니다.</h2>
     <h4>내 정보를 표시할 예정입니다.</h4>
-    <form th:action="@{/user/userpage}" method="get">
+    <form>
         <table class="table">
             <thead>
             <tr class="text-start">
                 <th>이름</th>
+                <td><span th:text="${id.username}"></span></td>
             </tr>
             <tr class="text-start">
                 <th>이메일</th>
+                <td><span th:text="${id.email}"></span></td>
             </tr>
             </thead>
 
             <tbody>
-            <tr class="text-center">
-<!--                아래에서 유저이름, 이메일을 표현하고 싶음-->
-                <td><span th:text="${username}"></span></td>
-                <td><span th:text="${email}"></span></td>
-            </tr>
+<!--            <tr class="text-center">-->
+<!--&lt;!&ndash;                아래에서 유저이름, 이메일을 표현하고 싶음&ndash;&gt;-->
+<!--                <td><span th:text="${username1}"></span></td>-->
+<!--                <td><span th:text="${email}"></span></td>-->
+<!--            </tr>-->
             </tbody>
         </table>
     </form>
