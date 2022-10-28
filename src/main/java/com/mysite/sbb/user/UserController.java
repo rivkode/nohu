@@ -59,15 +59,8 @@ public class UserController {
         return "login_form";
     }
 
-//    @GetMapping("/userpage")
-//    public String mypage() {
-//        return "userpage";
-//    }
-
     @RequestMapping("/mypage/{id}")
     public String mypage(Model model, @PathVariable("id") Integer id) {
-//        Question question = this.questionService.getQuestion(id);
-
         SiteUser siteUser = this.userService.getUser(id);
         model.addAttribute("siteUser", siteUser);
         return "mypage";
