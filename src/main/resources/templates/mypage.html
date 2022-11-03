@@ -8,39 +8,19 @@
             <thead>
             <tr class="text-start">
                 <th>이름</th>
-                <td><span th:text="${id.username}"></span></td>
+                <td><span th:text="${siteUser.username}"></span></td>
             </tr>
             <tr class="text-start">
                 <th>이메일</th>
-                <td><span th:text="${id.email}"></span></td>
+                <td><span th:text="${siteUser.email}"></span></td>
             </tr>
             </thead>
-
-            <tbody>
-<!--            <tr class="text-center">-->
-<!--&lt;!&ndash;                아래에서 유저이름, 이메일을 표현하고 싶음&ndash;&gt;-->
-<!--                <td><span th:text="${username1}"></span></td>-->
-<!--                <td><span th:text="${email}"></span></td>-->
-<!--            </tr>-->
-            </tbody>
         </table>
-    </form>
 
-    <table class="table">
-        <thead class="table-dark">
-        <tr class="text-center">
-            <th>이름</th>
-        </tr>
-        <tr class="text-center">
-            <th>이메일</th>
-        </tr>
-        <tr class="text-center">
-            <th>자기소개</th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+        <!--            나의 정보 상태-->
+        <!--            구인 구직 상태-->
+
+    </form>
 
 </div>
 </html>
