@@ -3,6 +3,7 @@ package com.mysite.sbb.user;
 import javax.validation.Valid;
 
 import com.mysite.sbb.question.Question;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -59,9 +60,10 @@ public class UserController {
         return "login_form";
     }
 
-    @RequestMapping("/mypage/{id}")
-    public String mypage(Model model, @PathVariable("id") Integer id) {
-        SiteUser siteUser = this.userService.getUser(id);
+    @RequestMapping("/mypage")
+    public String mypage(Model model) {
+        String userName = SecurityContextHolder.getContext().getAuthentication().getName();
+        SiteUser siteUser = this.userService.getUser(userName);
         model.addAttribute("siteUser", siteUser);
         return "mypage";
     }
