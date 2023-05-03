@@ -15,6 +15,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Controller
 @RequestMapping("/user")
@@ -53,6 +55,14 @@ public class UserController {
         }
 
         return "redirect:/";
+    }
+
+    @GetMapping("/userAll")
+    public String userAll(Model model) {
+        // username, password, email
+        List<SiteUser> userAll = this.userService.getAllUser();
+
+        return "home";
     }
 
     @GetMapping("/login")

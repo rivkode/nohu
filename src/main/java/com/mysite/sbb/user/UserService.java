@@ -3,6 +3,8 @@ package com.mysite.sbb.user;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.util.List;
 import java.util.Optional;
 import com.mysite.sbb.DataNotFoundException;
 
@@ -33,12 +35,9 @@ public class UserService {
         }
     }
 
-    public SiteUser getUser(Integer id) {
-        Optional<SiteUser> siteUser = this.userRepository.findById(Long.valueOf(id));
-        if (siteUser.isPresent()) {
-            return siteUser.get();
-        } else {
-            throw new DataNotFoundException("siteuser not found");
-        }
+    public List<SiteUser> getAllUser() {
+        List<SiteUser> allUser = this.userRepository.findAll();
+        return allUser;
+
     }
 }
